@@ -16,16 +16,15 @@
                     <li><h1>TodoLists</h1></li>
                 </ul>
 
-                {% for todolist in todolists %}
+                <ul class="todo-list">
                     <li>
                         <a href="todos.html">
-                            {{ todolist.name }}
+                            TodoList name
                         </a>
                         - 2/1
-                        <a href="todolist/{{ todolist.pk }}/delete/"
+                        <a href="todolist/1/delete/"
                            class="icon-delete right">Delete</a>
                     </li>
-                {% endfor %}
 
                     <li class="li-add-box">
                         <form action="todolist/add/" method="post">
@@ -42,7 +41,7 @@
                     </li>
 
                     <li class="next">
-                        <a href="{% url todos todolist.pk page|add:+1 %}">
+                        <a href="todolists/page=1">
                             Next <i class="icon-next"></i>
                         </a>
                     </li>
