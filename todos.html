@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Django Todo List</title>
+        <meta charset="UTF-8" />
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/messages.css" />
+
+        <link rel="stylesheet" href="css/custom.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <section class="todo">
+                <ul class="todo-controls">
+                    <li><h1>Todo Title</h1></li>
+                </ul>
+                <ul class="todo-list">
+                    <li>
+                        <input type="checkbox" id="done_1"
+                               checked="checked"/>
+                        <label class="toggle" for="done_1"></label>
+                        First Todo's Name.
+                        <a href="todolist/1/todo/1/delete/"
+                           class="icon-delete right">Delete</a>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="done_2"/>
+                        <label class="toggle" for="done_2"></label>
+                        Second Todo's Name.
+                        <a href="todolist/1/todo/2/delete/"
+                           class="icon-delete right">Delete</a>
+                    </li>
+
+
+                    <li class="li-add-box">
+                        <form action="todolist/1/todo/add/" method="post">
+                            <input class="input-text"
+                                   placeholder="Name of the new List."
+                                   required="required" autofocus="autofocus"></input>
+                        </form>
+                    </li>
+                </ul>
+
+                <ul class="todo-pagination">
+                    <li class="previous">
+                        <span><i class="icon-previous"></i> Previous</span>
+                    </li>
+
+                    <li class="lists-page-link">
+                        <a href="todolists.html">
+                            <i class="icon-previous"></i> Back to the List page.
+                        </a>
+                    </li>
+
+                    <li class="next">
+                        <a href="{% url todos todolist.pk page|add:+1 %}">
+                            Next <i class="icon-next"></i>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>
